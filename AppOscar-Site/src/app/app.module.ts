@@ -14,6 +14,9 @@ import { CategoriaListComponent } from './categoria/categoria-list/categoria-lis
 import { CategoriaListResolver } from './_resolvers/categoria-list.resolver';
 import { CategoriaCardComponent } from './categoria/categoria-card/categoria-card.component';
 import { CategoriaCreateComponent } from './categoria/categoria-create/categoria-create.component';
+import { FilmeCardComponent } from './filme/filme-card/filme-card.component';
+import { FilmeListComponent } from './filme/filme-list/filme-list.component';
+import { FilmeCreateComponent } from './filme/filme-create/filme-create.component';
 
 @NgModule({
    declarations: [
@@ -22,7 +25,10 @@ import { CategoriaCreateComponent } from './categoria/categoria-create/categoria
       NavComponent,
       CategoriaListComponent,
       CategoriaCardComponent,
-      CategoriaCreateComponent
+      CategoriaCreateComponent,
+      FilmeCardComponent,
+      FilmeListComponent,
+      FilmeCreateComponent,
    ],
    imports: [
       BrowserModule,

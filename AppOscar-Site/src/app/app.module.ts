@@ -17,6 +17,8 @@ import { CategoriaCreateComponent } from './categoria/categoria-create/categoria
 import { FilmeCardComponent } from './filme/filme-card/filme-card.component';
 import { FilmeListComponent } from './filme/filme-list/filme-list.component';
 import { FilmeCreateComponent } from './filme/filme-create/filme-create.component';
+import { FilmeService } from './_services/filme.service';
+import { FilmeListResolver } from './_resolvers/filme-list.resolver';
 
 @NgModule({
    declarations: [
@@ -40,7 +42,9 @@ import { FilmeCreateComponent } from './filme/filme-create/filme-create.componen
    ],
    providers: [
      CategoriaService,
-     CategoriaListResolver
+     CategoriaListResolver,
+     FilmeService,
+     FilmeListResolver
    ],
    bootstrap: [
       AppComponent

@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Filme } from 'src/app/_models/filme';
+import { FilmeService } from 'src/app/_services/filme.service';
 
 @Component({
   selector: 'app-filme-list',
@@ -6,9 +8,24 @@ import { Component, OnInit } from '@angular/core';
 })
 export class FilmeListComponent implements OnInit {
 
-  constructor() { }
+    filmes: Filme[];
+    registerMode = false;
 
-  ngOnInit() {
-  }
+    constructor(private filmeService: FilmeService) { }
 
+    ngOnInit() {
+        this.filmeService.getAllFilmes().subscribe(
+            filmes => {
+                this.filmes = filmes;
+            }
+        );
+    }
+
+    registroFilmeToogle() {
+        this.registerMode = true;
+    }
+
+    cancelRegisterMode(registerMode: boolean) {
+        this.registerMode = registerMode;
+    }
 }

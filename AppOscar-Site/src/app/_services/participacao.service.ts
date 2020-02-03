@@ -47,4 +47,8 @@ export class ParticipacaoService {
             toArray()
         );
     }
+
+    cadastraParticipacao(participacao: Participacao) {
+        return this.http.post(this.baseUrl + 'participacao', participacao);
+    }
 }

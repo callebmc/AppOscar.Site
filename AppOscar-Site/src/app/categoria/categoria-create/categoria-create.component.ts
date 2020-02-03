@@ -21,7 +21,7 @@ export class CategoriaCreateComponent implements OnInit {
         this.createRegisterForm();
     }
 
-    createRegisterForm(){
+    createRegisterForm() {
         this.registerForm = this.fb.group({
             nomeCategoria: [''],
             pontosCategoria: ['']

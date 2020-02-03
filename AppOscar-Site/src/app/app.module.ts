@@ -27,6 +27,8 @@ import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
 import { DemoMaterialModule } from "./material-module";
 import { IndicadosCardComponent } from "./indicados/indicados-card/indicados-card.component";
 import { JsonDeserializerFactory } from "./_services/json-deserialize.service";
+import { CategoriaCadastroFilmeComponent } from './categoria/categoria-cadastro-filme/categoria-cadastro-filme.component';
+import { RxReactiveFormsModule } from '@rxweb/reactive-form-validators';
 
 @NgModule({
     declarations: [
@@ -36,6 +38,7 @@ import { JsonDeserializerFactory } from "./_services/json-deserialize.service";
         CategoriaListComponent,
         CategoriaCardComponent,
         CategoriaCreateComponent,
+        CategoriaCadastroFilmeComponent,
         FilmeCardComponent,
         FilmeListComponent,
         FilmeCreateComponent,
@@ -50,7 +53,8 @@ import { JsonDeserializerFactory } from "./_services/json-deserialize.service";
         ReactiveFormsModule,
         RouterModule.forRoot(appRoutes),
         BrowserAnimationsModule,
-        DemoMaterialModule
+        DemoMaterialModule,
+        RxReactiveFormsModule
     ],
     providers: [
         CategoriaService,

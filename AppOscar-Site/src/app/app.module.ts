@@ -29,6 +29,7 @@ import { IndicadosCardComponent } from "./indicados/indicados-card/indicados-car
 import { JsonDeserializerFactory } from "./_services/json-deserialize.service";
 import { CategoriaCadastroFilmeComponent } from './categoria/categoria-cadastro-filme/categoria-cadastro-filme.component';
 import { RxReactiveFormsModule } from '@rxweb/reactive-form-validators';
+import { MsalModule } from '@azure/msal-angular';
 
 @NgModule({
     declarations: [
@@ -54,7 +55,13 @@ import { RxReactiveFormsModule } from '@rxweb/reactive-form-validators';
         RouterModule.forRoot(appRoutes),
         BrowserAnimationsModule,
         DemoMaterialModule,
-        RxReactiveFormsModule
+        RxReactiveFormsModule,
+        MsalModule.forRoot({
+            clientID: '9fd84bfd-0275-499b-a63e-a771f4727173',
+            authority: 'https://callebauth.b2clogin.com/tfp/callebauth.onmicrosoft.com/B2C_1_signupsigninoscar',
+            postLogoutRedirectUri: 'http://localhost:4200/',
+            validateAuthority: false
+        })
     ],
     providers: [
         CategoriaService,

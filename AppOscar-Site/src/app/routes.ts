@@ -7,6 +7,7 @@ import { FilmeListComponent } from './filme/filme-list/filme-list.component';
 import { FilmeCreateComponent } from './filme/filme-create/filme-create.component';
 import { FilmeListResolver } from './_resolvers/filme-list.resolver';
 import { IndicadosListComponent } from './indicados/indicados-list/indicados-list.component';
+import { CategoriaCadastroFilmeComponent } from './categoria/categoria-cadastro-filme/categoria-cadastro-filme.component';
 
 export const appRoutes: Routes = [
     { path: '', component: HomeComponent },
@@ -22,6 +23,10 @@ export const appRoutes: Routes = [
             {
                 path: 'categoria/criar',
                 component: CategoriaCreateComponent
+            },
+            {
+                path: 'cadastrar',
+                component: CategoriaCadastroFilmeComponent
             },
             {
                 path: 'filme',

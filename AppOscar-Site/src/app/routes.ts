@@ -6,6 +6,7 @@ import { CategoriaCreateComponent } from './categoria/categoria-create/categoria
 import { FilmeListComponent } from './filme/filme-list/filme-list.component';
 import { FilmeCreateComponent } from './filme/filme-create/filme-create.component';
 import { FilmeListResolver } from './_resolvers/filme-list.resolver';
+import { IndicadosListComponent } from './indicados/indicados-list/indicados-list.component';
 
 export const appRoutes: Routes = [
     { path: '', component: HomeComponent },
@@ -30,6 +31,11 @@ export const appRoutes: Routes = [
             {
                 path: 'filme/criar',
                 component: FilmeCreateComponent
+            },
+            {
+                path: 'indicados',
+                component: IndicadosListComponent,
+                resolve: { categoria: CategoriaListResolver }
             }
         ]
     },

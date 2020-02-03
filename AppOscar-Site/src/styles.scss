@@ -93,6 +93,9 @@
     transition: all 0.3s ease-in-out;
 }
 
-body {
-    background-image: url(assets/oscar.jpg);
-}
+// body {
+//     background-image: url(assets/oscar.jpg);
+// }
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }

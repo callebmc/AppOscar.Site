@@ -8,9 +8,10 @@ import { FilmeCreateComponent } from './filme/filme-create/filme-create.componen
 import { FilmeListResolver } from './_resolvers/filme-list.resolver';
 import { IndicadosListComponent } from './indicados/indicados-list/indicados-list.component';
 import { CategoriaCadastroFilmeComponent } from './categoria/categoria-cadastro-filme/categoria-cadastro-filme.component';
+import { MsalGuard } from '@azure/msal-angular';
 
 export const appRoutes: Routes = [
-    { path: '', component: HomeComponent },
+    { path: '', component: HomeComponent, canActivate: [MsalGuard] },
     {
         path: '',
         runGuardsAndResolvers: 'always',
@@ -26,7 +27,7 @@ export const appRoutes: Routes = [
             },
             {
                 path: 'cadastrar',
-                component: CategoriaCadastroFilmeComponent
+                component: CategoriaCadastroFilmeComponent,
             },
             {
                 path: 'filme',

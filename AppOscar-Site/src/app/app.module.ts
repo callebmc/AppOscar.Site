@@ -30,6 +30,11 @@ import { JsonDeserializerFactory } from "./_services/json-deserialize.service";
 import { CategoriaCadastroFilmeComponent } from './categoria/categoria-cadastro-filme/categoria-cadastro-filme.component';
 import { RxReactiveFormsModule } from '@rxweb/reactive-form-validators';
 import { MsalModule } from '@azure/msal-angular';
+import { CountdownModule, CountdownGlobalConfig } from 'ngx-countdown';
+
+// function countdownConfigFactory(): CountdownGlobalConfig {
+//     return { format: `mm:ss` };
+//   }
 
 @NgModule({
     declarations: [
@@ -61,7 +66,8 @@ import { MsalModule } from '@azure/msal-angular';
             authority: 'https://callebauth.b2clogin.com/tfp/callebauth.onmicrosoft.com/B2C_1_signupsigninoscar',
             postLogoutRedirectUri: 'http://localhost:4200/',
             validateAuthority: false
-        })
+        }),
+        CountdownModule
     ],
     providers: [
         CategoriaService,
@@ -69,7 +75,8 @@ import { MsalModule } from '@azure/msal-angular';
         FilmeService,
         FilmeListResolver,
         ParticipacaoService,
-        JsonDeserializerFactory
+        JsonDeserializerFactory,
+        // { provide: CountdownGlobalConfig, useFactory: countdownConfigFactory }
     ],
     bootstrap: [AppComponent]
 })

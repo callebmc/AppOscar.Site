@@ -64,7 +64,6 @@ import { CountdownModule, CountdownGlobalConfig } from 'ngx-countdown';
         MsalModule.forRoot({
             clientID: '9fd84bfd-0275-499b-a63e-a771f4727173',
             authority: 'https://callebauth.b2clogin.com/tfp/callebauth.onmicrosoft.com/B2C_1_signupsigninoscar',
-            postLogoutRedirectUri: 'http://localhost:4200/',
             validateAuthority: false
         }),
         CountdownModule

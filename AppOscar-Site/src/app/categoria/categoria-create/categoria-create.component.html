@@ -17,6 +17,15 @@
           placeholder="Pontos da Categoria"
         />
       </div>
+      <div class="form-group">
+        <label for="nomeCategoria">URL Imagem</label>
+        <input
+          type="text"
+          class="form-control"
+          formControlName="categoraPhotoUrl"
+          placeholder="URL"
+        />
+      </div>
 
       <div class="form-group text-center">
         <button class="btn btn-success mr-4"[disabled]="!registerForm.valid" type="submit">Cadastrar</button>

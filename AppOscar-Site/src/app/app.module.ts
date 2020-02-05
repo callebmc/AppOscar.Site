@@ -31,6 +31,8 @@ import { CategoriaCadastroFilmeComponent } from './categoria/categoria-cadastro-
 import { RxReactiveFormsModule } from '@rxweb/reactive-form-validators';
 import { MsalModule } from '@azure/msal-angular';
 import { CountdownModule, CountdownGlobalConfig } from 'ngx-countdown';
+import { VotoListComponent } from './voto/voto-list/voto-list.component';
+import { VotoCardChoiceComponent } from './voto/voto-card-choice/voto-card-choice.component';
 
 // function countdownConfigFactory(): CountdownGlobalConfig {
 //     return { format: `mm:ss` };
@@ -49,7 +51,9 @@ import { CountdownModule, CountdownGlobalConfig } from 'ngx-countdown';
         FilmeListComponent,
         FilmeCreateComponent,
         IndicadosListComponent,
-        IndicadosCardComponent
+        IndicadosCardComponent,
+        VotoListComponent,
+        VotoCardChoiceComponent
     ],
     imports: [
         BrowserModule,

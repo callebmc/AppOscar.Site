@@ -24,7 +24,8 @@ export class CategoriaCreateComponent implements OnInit {
     createRegisterForm() {
         this.registerForm = this.fb.group({
             nomeCategoria: [''],
-            pontosCategoria: ['']
+            pontosCategoria: [''],
+            categoriaPhotoUrl: ['']
         });
     }
 

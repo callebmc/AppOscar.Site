@@ -25,7 +25,8 @@ export class FilmeCreateComponent implements OnInit {
 
     createRegisterForm() {
         this.registerForm = this.fb.group({
-            nomeFilme: ['']
+            nomeFilme: [''],
+            filmePhotoUrl: ['']
         });
     }
 

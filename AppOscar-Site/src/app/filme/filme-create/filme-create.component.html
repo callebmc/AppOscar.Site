@@ -8,6 +8,15 @@
           placeholder="Nome do Filme"
         />
     </div>
+    <div class="form-group">
+        <label for="nomeCategoria">URL da Imagem</label>
+        <input
+          type="text"
+          class="form-control"
+          formControlName="filmePhotoUrl"
+          placeholder="URL"
+        />
+    </div>
 
       <div class="form-group text-center">
         <button class="btn btn-success mr-4"[disabled]="!registerForm.valid" type="submit">Cadastrar</button>

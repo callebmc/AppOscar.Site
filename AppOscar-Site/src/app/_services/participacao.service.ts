@@ -39,10 +39,6 @@ export class ParticipacaoService {
                 ) as Array<Participacao>;
                 return deserialized;
             }),
-            concatMap(participacao => of(participacao)),
-            concatMap(participacao => {
-                return of(participacao);
-            }),
             toArray()
         );
     }

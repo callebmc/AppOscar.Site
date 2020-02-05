@@ -1,22 +1,26 @@
 <div class="bg-light">
     <div class="container">
-        <h1 class="display-4 text-dark" style="opacity: 1.0;">Indicados Oscar 2020</h1>
+        <h1 class="display-4 text-dark" style="opacity: 1.0;">Votação 2020</h1>
         <p class="lead text-dark" style="opacity: 1.0;">Todos os indicados ao Oscar</p>
     </div>
 </div>
 
-<div class="container mt-3  ">
+<div class="container mt-3" *ngIf="!usuario">
     <div class="row justify-content-center">
         <mat-card class="col-lg-10 col-md-10 col-sm-6 mt-4 ml-2 mr-2" *ngFor="let categoria of categorias">
             <h4 class="text-center">{{categoria.nomeCategoria}}</h4>
-            <mat-expansion-panel>
-                <mat-expansion-panel-header>
-                    <mat-panel-title>
-                        Indicados
-                    </mat-panel-title>
-                </mat-expansion-panel-header>
-                <app-indicados-card [categoria]="categoria"></app-indicados-card>
-            </mat-expansion-panel>
+                <app-voto-card-choice [categoria]="categoria" [events]="eventsSubject.asObservable()"></app-voto-card-choice>
         </mat-card>
+    </div>
+    <div class="row justify-content-center">
+        <button type="submit" class="btn btn-lg btn-primary" form="registroPessoa" (click)="emitEventToChild()">
+            <h3>Cadastrar Voto</h3>
+        </button>
+    </div>
+</div>
+
+<div class="container mt-3" *ngIf="usuario">
+    <div class="row justify-content-center">
+        <p>Votos já computados</p>
     </div>
 </div>

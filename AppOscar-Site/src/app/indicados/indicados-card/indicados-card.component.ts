@@ -14,20 +14,17 @@ export class IndicadosCardComponent implements OnInit {
     @Input()
     categoria: Categoria;
 
-    // filme: Filme[] = new Array<Filme>();
     participacao: Participacao[] =  new Array<Participacao>();
 
     constructor(private participacaoService: ParticipacaoService) { }
 
     ngOnInit() {
         this.getParticipacao();
-        console.log(this.participacao);
     }
 
     getParticipacao() {
         this.participacaoService.getParticipacaoByCategoria(this.categoria).subscribe(
             participacao => {
-                // console.log(participacao);
                 this.participacao = participacao;
             },
             error => {

@@ -9,7 +9,7 @@
     <div class="row justify-content-center">
         <mat-card class="col-lg-10 col-md-10 col-sm-6 mt-4 ml-2 mr-2" *ngFor="let categoria of categorias">
             <h4 class="text-center">{{categoria.nomeCategoria}}</h4>
-                <app-voto-card-choice [categoria]="categoria" [events]="eventsSubject.asObservable()"></app-voto-card-choice>
+                <app-voto-card-choice [categoria]="categoria" [events]="eventsSubject.asObservable()" [usuario]="decoded.sub"></app-voto-card-choice>
         </mat-card>
     </div>
     <div class="row justify-content-center">

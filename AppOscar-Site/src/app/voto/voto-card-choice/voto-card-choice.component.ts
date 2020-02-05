@@ -21,6 +21,9 @@ export class VotoCardChoiceComponent implements OnInit {
     @Input()
     categoria: Categoria;
 
+    @Input()
+    usuario: string;
+
     participacao: Participacao[] =  new Array<Participacao>();
 
     voto = new Voto();
@@ -35,7 +38,7 @@ export class VotoCardChoiceComponent implements OnInit {
         this.registerForm = this.fb.formGroup(this.voto);
         this.getParticipacao();
         this.eventsSubscription = this.events.subscribe(() => this.cadastraVoto());
-        this.voto.idUsuario = 'calleb';
+        this.voto.idUsuario = this.usuario;
     }
 
     getParticipacao() {

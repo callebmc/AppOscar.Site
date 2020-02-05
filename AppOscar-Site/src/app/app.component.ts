@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { AuthServiceService } from './_services/auth-service.service';
+import { JwtHelperService } from '@auth0/angular-jwt';
 
 @Component({
   selector: 'app-root',
@@ -8,5 +10,14 @@ import { Component, OnInit } from '@angular/core';
 export class AppComponent implements OnInit {
   title = 'AppOscar-Site';
 
-  ngOnInit() {}
+  jwtHelper = new JwtHelperService();
+
+  constructor(private authService: AuthServiceService) {}
+
+  ngOnInit() {
+      const token = localStorage.getItem('msal.idtoken');
+      if (token) {
+          this.authService.decodedToken = this.jwtHelper.decodeToken(token);
+      }
+  }
 }

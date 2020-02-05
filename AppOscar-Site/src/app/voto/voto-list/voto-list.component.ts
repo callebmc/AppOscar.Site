@@ -5,6 +5,8 @@ import { CategoriaService } from 'src/app/_services/categoria.service';
 import { ParticipacaoService } from 'src/app/_services/participacao.service';
 import { VotoService } from 'src/app/_services/voto.service';
 import { Subject } from 'rxjs';
+import { JwtHelperService } from '@auth0/angular-jwt';
+import { AuthServiceService } from 'src/app/_services/auth-service.service';
 
 @Component({
   selector: 'app-voto-list',
@@ -21,18 +23,23 @@ export class VotoListComponent implements OnInit {
 
     eventsSubject: Subject<void> = new Subject<void>();
 
+    decoded: any;
+
     constructor(private categoriaService: CategoriaService,
                 private participacaoService: ParticipacaoService,
-                private votoService: VotoService) { }
+                private votoService: VotoService,
+                private authService: AuthServiceService
+                ) { }
 
     ngOnInit() {
         this.checaUsuario();
         this.initCategorias();
+        this.decoded = this.authService.decodedToken;
     }
 
 
     checaUsuario() {
-        this.votoService.checkVoto('cesar').subscribe(
+        this.votoService.checkVoto('aa').subscribe(
             votou => {
                 this.usuario = votou;
             },

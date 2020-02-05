@@ -12,10 +12,11 @@ import { MsalGuard } from '@azure/msal-angular';
 import { VotoListComponent } from './voto/voto-list/voto-list.component';
 
 export const appRoutes: Routes = [
-    { path: '', component: HomeComponent, canActivate: [MsalGuard] },
+    { path: '', component: HomeComponent},
     {
         path: '',
         runGuardsAndResolvers: 'always',
+        canActivate: [MsalGuard],
         children: [
             {
                 path: 'categorias',

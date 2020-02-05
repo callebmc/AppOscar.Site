@@ -35,6 +35,7 @@ import { CountdownModule, CountdownGlobalConfig } from 'ngx-countdown';
 import { VotoListComponent } from './voto/voto-list/voto-list.component';
 import { VotoCardChoiceComponent } from './voto/voto-card-choice/voto-card-choice.component';
 import { AuthServiceService } from './_services/auth-service.service';
+import { TooltipModule, ModalModule, BsDatepickerModule, BsLocaleService } from 'ngx-bootstrap';
 
 // function countdownConfigFactory(): CountdownGlobalConfig {
 //     return { format: `mm:ss` };
@@ -85,7 +86,8 @@ export function tokenGetter() {
                whitelistedDomains: ['localhost:5000'],
                blacklistedRoutes: ['localhost:5000/api/auth']
             }
-         })
+         }),
+         ModalModule.forRoot()
     ],
     providers: [
         CategoriaService,

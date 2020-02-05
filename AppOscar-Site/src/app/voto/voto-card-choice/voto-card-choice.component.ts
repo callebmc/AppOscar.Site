@@ -64,6 +64,6 @@ export class VotoCardChoiceComponent implements OnInit {
             error => {
                 console.log(error);
             }
-        )
+        );
     }
 }

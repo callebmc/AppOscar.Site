@@ -1,12 +1,12 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, TemplateRef } from '@angular/core';
 import { Categoria } from 'src/app/_models/categoria';
 import { Participacao } from 'src/app/_models/participacao';
 import { CategoriaService } from 'src/app/_services/categoria.service';
 import { ParticipacaoService } from 'src/app/_services/participacao.service';
 import { VotoService } from 'src/app/_services/voto.service';
 import { Subject } from 'rxjs';
-import { JwtHelperService } from '@auth0/angular-jwt';
 import { AuthServiceService } from 'src/app/_services/auth-service.service';
+import { BsModalRef, BsModalService } from 'ngx-bootstrap';
 
 @Component({
   selector: 'app-voto-list',
@@ -25,10 +25,13 @@ export class VotoListComponent implements OnInit {
 
     decoded: any;
 
+    modalRef: BsModalRef;
+
     constructor(private categoriaService: CategoriaService,
                 private participacaoService: ParticipacaoService,
                 private votoService: VotoService,
-                private authService: AuthServiceService
+                private authService: AuthServiceService,
+                private modalService: BsModalService
                 ) { }
 
     ngOnInit() {
@@ -37,6 +40,9 @@ export class VotoListComponent implements OnInit {
         this.decoded = this.authService.decodedToken;
     }
 
+    openModal(template: TemplateRef<any>) {
+        this.modalRef = this.modalService.show(template, {class: 'modal-sm'});
+    }
 
     checaUsuario() {
         this.votoService.checkVoto('aa').subscribe(

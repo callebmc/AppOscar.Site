@@ -1,7 +1,7 @@
 <div class="bg-light">
     <div class="container">
         <h1 class="display-4 text-dark" style="opacity: 1.0;">Votação 2020</h1>
-        <p class="lead text-dark" style="opacity: 1.0;">Todos os indicados ao Oscar</p>
+        <p class="lead text-dark" style="opacity: 1.0;">Faça suas escolhas</p>
     </div>
 </div>
 
@@ -9,13 +9,24 @@
     <div class="row justify-content-center">
         <mat-card class="col-lg-10 col-md-10 col-sm-6 mt-4 ml-2 mr-2" *ngFor="let categoria of categorias">
             <h4 class="text-center">{{categoria.nomeCategoria}}</h4>
-                <app-voto-card-choice [categoria]="categoria" [events]="eventsSubject.asObservable()" [usuario]="decoded.sub"></app-voto-card-choice>
+            <app-voto-card-choice [categoria]="categoria" [events]="eventsSubject.asObservable()"
+                [usuario]="decoded.sub"></app-voto-card-choice>
         </mat-card>
     </div>
-    <div class="row justify-content-center">
-        <button type="submit" class="btn btn-lg btn-primary" form="registroPessoa" (click)="emitEventToChild()">
-            <h3>Cadastrar Voto</h3>
+    <div class="row justify-content-center mt-4">
+        <button container="td" placement="top" tooltip="Excluir" type="button" class="btn btn-lg btn-primary"
+            (click)="openModal(template)">
+            Confirmar Votos
+            <i class="fas fa-trash-alt"></i>
         </button>
+        <br /><br />
+        <ng-template #template>
+            <div class="modal-body text-center">
+                <p>Confirmar Votos?</p>
+                <button type="button" class="btn btn-default" (click)="emitEventToChild()">Sim</button>
+                <button type="button" class="btn btn-primary" (click)="modalRef.hide()">Não</button>
+            </div>
+        </ng-template>
     </div>
 </div>
 

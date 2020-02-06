@@ -75,6 +75,6 @@ export class VotoListComponent implements OnInit {
         this.eventsSubject.next();
         this.modalRef.hide();
         this.checaUsuario();
-        location.reload();
+        // location.reload();
       }
 }

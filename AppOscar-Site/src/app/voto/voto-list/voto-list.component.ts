@@ -7,6 +7,7 @@ import { VotoService } from 'src/app/_services/voto.service';
 import { Subject } from 'rxjs';
 import { AuthServiceService } from 'src/app/_services/auth-service.service';
 import { BsModalRef, BsModalService } from 'ngx-bootstrap';
+import { MatSnackBar } from '@angular/material/snack-bar';
 
 @Component({
   selector: 'app-voto-list',
@@ -31,7 +32,8 @@ export class VotoListComponent implements OnInit {
                 private participacaoService: ParticipacaoService,
                 private votoService: VotoService,
                 private authService: AuthServiceService,
-                private modalService: BsModalService
+                private modalService: BsModalService,
+                private snackBar: MatSnackBar
                 ) { }
 
     ngOnInit() {
@@ -75,6 +77,13 @@ export class VotoListComponent implements OnInit {
         this.eventsSubject.next();
         this.modalRef.hide();
         this.checaUsuario();
+        this.openSnackBar('Voto Cadastrado com sucesso!', 'Boa Sorte!');
         // location.reload();
+      }
+
+      openSnackBar(message: string, action: string) {
+        this.snackBar.open(message, action, {
+          duration: 2000,
+        });
       }
 }

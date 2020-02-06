@@ -4,7 +4,7 @@ import { Categoria } from './categoria';
 
 export class Filme {
 
-    id: string;
+    idFilme: string;
 
     nomeFilme: string;
 

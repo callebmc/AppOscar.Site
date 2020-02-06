@@ -1,9 +1,9 @@
     <div class="card-block">
         <div class="row justify-content-center">
-            <div class="col-md-3 mr-1 mt-1" style="background-color: #666666;" *ngFor="let part of categoria.filmes">
-                <p class="text-center">{{part.nomeFilme}}</p>
+            <div class="col-md-3 mr-1 mt-1" style="background-color: #666666;" *ngFor="let part of participacao">
+                <p class="text-center">{{part.filme.nomeFilme}}</p>
                 <div class="photo-box">
-                    <img class="img-fluid" src="{{part.filmePhotoUrl}}" alt="image">
+                    <img class="img-fluid" src="{{part.filme.filmePhotoUrl}}" alt="image">
                 </div>
             </div>
         </div>

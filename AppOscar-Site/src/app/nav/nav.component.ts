@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { MsalService } from '@azure/msal-angular';
+import { AuthServiceService } from '../_services/auth-service.service';
 
 @Component({
   selector: 'app-nav',
@@ -10,9 +12,23 @@ export class NavComponent implements OnInit {
 
   model: any = {};
 
-  constructor(private router: Router) { }
+  nomeUsuario: string;
+  foi: any;
+
+  logado = false;
+
+  constructor(  private router: Router,
+                private msal: MsalService,
+                private authService: AuthServiceService) { }
 
   ngOnInit() {
+      if (this.authService.decodedToken ) {
+        this.logado = true;
+      }
+  }
+
+  logout() {
+        this.msal.logout();
   }
 
 }

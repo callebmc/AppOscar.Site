@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
+import { AuxService } from '../_services/aux.service';
 
 @Component({
   selector: 'app-home',
@@ -11,21 +12,19 @@ export class HomeComponent implements OnInit {
   registerMode = true;
   values: any;
 
-  horarioCountdow: number;
+  horarioCountdown: number;
 
-  constructor(private http: HttpClient) { }
+  constructor(  private http: HttpClient,
+                private auxService: AuxService) { }
 
   ngOnInit() {
-      this.calcularTempoRestante();
+      this.auxService.getTimeLeft().subscribe(
+          left => {
+              this.horarioCountdown = left;
+          }
+      );
   }
 
-  calcularTempoRestante() {
-      const horarioFinal =  new Date(2020, 2, 9, 0, 1, 0);
-      const horarioInicial =  Date.now();
-
-      this.horarioCountdow =  ( Number(horarioFinal) - Number(horarioInicial));
-
-  }
 
   registerToggle() {
     this.registerMode = true;

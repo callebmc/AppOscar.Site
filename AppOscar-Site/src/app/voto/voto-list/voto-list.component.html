@@ -1,14 +1,14 @@
 <div class="bg-light">
     <div class="container">
-        <h1 class="display-4 text-dark" style="opacity: 1.0;">Votação 2020</h1>
-        <p class="lead text-dark" style="opacity: 1.0;">Faça suas escolhas</p>
+        <h1 class="display-4 font-oscar-gold" style="opacity: 1.0;">Votação 2020</h1>
+        <p class="lead font-oscar-black" style="opacity: 1.0;">Faça suas escolhas</p>
     </div>
 </div>
 
 <div class="container mt-3" *ngIf="!usuario">
     <div class="row justify-content-center">
         <mat-card class="col-lg-10 col-md-10 col-sm-6 mt-4 ml-2 mr-2" *ngFor="let categoria of categorias">
-            <h4 class="text-center">{{categoria.nomeCategoria}}</h4>
+            <h4 class="text-center font-oscar-gold">{{categoria.nomeCategoria}}</h4>
             <app-voto-card-choice [categoria]="categoria" [events]="eventsSubject.asObservable()"
                 [usuario]="decoded"></app-voto-card-choice>
         </mat-card>
@@ -23,7 +23,7 @@
         <ng-template #template>
             <div class="modal-body text-center">
                 <p>Confirmar Votos?</p>
-                <button type="button" class="btn btn-default" (click)="emitEventToChild()">Sim</button>
+                <button type="button" class="btn btn-light" (click)="emitEventToChild()">Sim</button>
                 <button type="button" class="btn btn-primary" (click)="modalRef.hide()">Não</button>
             </div>
         </ng-template>

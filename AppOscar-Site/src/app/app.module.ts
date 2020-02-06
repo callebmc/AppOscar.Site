@@ -77,7 +77,7 @@ export function tokenGetter() {
             clientID: '9fd84bfd-0275-499b-a63e-a771f4727173',
             authority: 'https://callebauth.b2clogin.com/tfp/callebauth.onmicrosoft.com/B2C_1_signupsigninoscar',
             validateAuthority: false,
-            postLogoutRedirectUri: 'http://localhost:4200/',
+            postLogoutRedirectUri: 'https://oscardosamigos.azurewebsites.net/',
             cacheLocation : 'localStorage'
         }),
         CountdownModule,

@@ -32,17 +32,12 @@ export class ParticipacaoService {
 
     getParticipacaoByCategoria(categoria: Categoria) {
         const url = `participacao/by-categoria/${categoria.idCategoria}`;
-        return this.http.get<Filme[]>(this.baseUrl + url).pipe(
-            concatMap(filmes => {
-                const deserialized = this.deserializeFilme.deserialize(
-                    filmes
-                ) as Array<Filme>;
-                categoria.filmes = deserialized;
+        return this.http.get<Participacao[]>(this.baseUrl + url).pipe(
+            concatMap(participacao => {
+                const deserialized = this.deserialize.deserialize(
+                    participacao
+                ) as Array<Participacao>;
                 return deserialized;
-            }),
-            concatMap(filmes => of(filmes)),
-            concatMap(filmes => {
-                return of(filmes);
             }),
             toArray()
         );

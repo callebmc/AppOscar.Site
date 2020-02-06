@@ -5,6 +5,7 @@ import { prop } from '@rxweb/reactive-form-validators';
 
 export class Participacao {
 
+    @prop()
     id: number;
 
     @prop()

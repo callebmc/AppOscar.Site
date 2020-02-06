@@ -9,12 +9,14 @@ import { FilmeListResolver } from './_resolvers/filme-list.resolver';
 import { IndicadosListComponent } from './indicados/indicados-list/indicados-list.component';
 import { CategoriaCadastroFilmeComponent } from './categoria/categoria-cadastro-filme/categoria-cadastro-filme.component';
 import { MsalGuard } from '@azure/msal-angular';
+import { VotoListComponent } from './voto/voto-list/voto-list.component';
 
 export const appRoutes: Routes = [
-    { path: '', component: HomeComponent, canActivate: [MsalGuard] },
+    { path: '', component: HomeComponent},
     {
         path: '',
         runGuardsAndResolvers: 'always',
+        canActivate: [MsalGuard],
         children: [
             {
                 path: 'categorias',
@@ -41,6 +43,11 @@ export const appRoutes: Routes = [
             {
                 path: 'indicados',
                 component: IndicadosListComponent,
+                resolve: { categoria: CategoriaListResolver }
+            },
+            {
+                path: 'votos',
+                component: VotoListComponent,
                 resolve: { categoria: CategoriaListResolver }
             }
         ]

@@ -1,0 +1,13 @@
+<div class="container">
+    <form [formGroup]="registerForm">
+        <label id="example-radio-group-label">Escolha um Filme</label>
+        <div class="row">
+            <mat-radio-group aria-labelledby="example-radio-group-label" class="example-radio-group" formControlName="idParticipacao">
+                <mat-radio-button class="example-radio-button col-lg" *ngFor="let part of participacao" [value]="part.id">
+                    <h4>{{part.filme.nomeFilme}}</h4>
+                </mat-radio-button>
+            </mat-radio-group>
+        </div>
+    </form>
+    <p>{{voto|json}}</p>
+</div>

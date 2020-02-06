@@ -19,7 +19,7 @@ export class VotoListComponent implements OnInit {
 
     categorias: Categoria[];
 
-    usuario = true;
+    usuario = false;
 
     eventsSubject: Subject<void> = new Subject<void>();
 
@@ -37,7 +37,7 @@ export class VotoListComponent implements OnInit {
     ngOnInit() {
         this.checaUsuario();
         this.initCategorias();
-        this.decoded = this.authService.decodedToken;
+        this.decoded = this.authService.decodedToken.sub;
     }
 
     openModal(template: TemplateRef<any>) {
@@ -45,7 +45,7 @@ export class VotoListComponent implements OnInit {
     }
 
     checaUsuario() {
-        this.votoService.checkVoto('aa').subscribe(
+        this.votoService.checkVoto(this.authService.decodedToken.sub).subscribe(
             votou => {
                 this.usuario = votou;
             },
@@ -73,5 +73,8 @@ export class VotoListComponent implements OnInit {
 
     emitEventToChild() {
         this.eventsSubject.next();
+        this.modalRef.hide();
+        this.checaUsuario();
+        location.reload();
       }
 }

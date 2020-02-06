@@ -15,12 +15,16 @@ export class NavComponent implements OnInit {
   nomeUsuario: string;
   foi: any;
 
+  logado = false;
+
   constructor(  private router: Router,
                 private msal: MsalService,
                 private authService: AuthServiceService) { }
 
   ngOnInit() {
-      this.nomeUsuario = this.msal.getUser().name;
+      if (this.authService.decodedToken ) {
+        this.logado = true;
+      }
   }
 
   logout() {

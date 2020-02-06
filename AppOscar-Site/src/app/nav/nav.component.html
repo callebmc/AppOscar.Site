@@ -20,9 +20,10 @@
         </li>
       </ul>
 
-            Bem Vindo {{nomeUsuario}}
 
-        <button class="btn btn-primary" (click)="logout()">Sair</button>
+
+        <button *ngIf="logado" class="btn btn-primary" (click)="logout()" >Sair</button>
+        <button *ngIf="!logado" class="btn btn-primary" [routerLink]="['indicados']" >Logar</button>
 
 
   </div>

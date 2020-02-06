@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { AuxService } from '../_services/aux.service';
+import { AuxService } from '../_services/timeaux.service';
 
 @Component({
   selector: 'app-home',

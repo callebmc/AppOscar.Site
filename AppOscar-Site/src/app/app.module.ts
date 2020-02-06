@@ -36,6 +36,7 @@ import { VotoListComponent } from './voto/voto-list/voto-list.component';
 import { VotoCardChoiceComponent } from './voto/voto-card-choice/voto-card-choice.component';
 import { AuthServiceService } from './_services/auth-service.service';
 import { TooltipModule, ModalModule, BsDatepickerModule, BsLocaleService, CarouselModule, CarouselConfig  } from 'ngx-bootstrap';
+import { AuxService } from './_services/timeaux.service';
 
 // function countdownConfigFactory(): CountdownGlobalConfig {
 //     return { format: `mm:ss` };
@@ -98,6 +99,7 @@ export function tokenGetter() {
         ParticipacaoService,
         JsonDeserializerFactory,
         AuthServiceService,
+        AuxService,
         { provide: CarouselConfig, useValue: { interval: 3000, noPause: true, showIndicators: true }}
         // { provide: CountdownGlobalConfig, useFactory: countdownConfigFactory }
     ],

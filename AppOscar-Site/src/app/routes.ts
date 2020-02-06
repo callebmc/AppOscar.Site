@@ -16,7 +16,7 @@ export const appRoutes: Routes = [
     {
         path: '',
         runGuardsAndResolvers: 'always',
-        canActivate: [MsalGuard],
+        // canActivate: [MsalGuard],
         children: [
             {
                 path: 'categorias',

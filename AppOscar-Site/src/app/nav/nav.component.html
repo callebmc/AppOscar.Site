@@ -9,13 +9,13 @@
         <li class="nav-item" routerLinkActive="active">
           <a class="nav-link" [routerLink]="['/filme']" >Filmes</a>
         </li> -->
-        <li class="nav-item" routerLinkActive="active">
+        <li  *ngIf="logado" class="nav-item" routerLinkActive="active">
           <a class="nav-link" [routerLink]="['/indicados']">Indicados</a>
         </li>
         <!-- <li class="nav-item" routerLinkActive="active">
             <a class="nav-link" [routerLink]="['/cadastrar']">Cadastrar os Indicados</a>
         </li> -->
-        <li class="nav-item" routerLinkActive="active">
+        <li *ngIf="logado" class="nav-item" routerLinkActive="active">
             <a class="nav-link" [routerLink]="['/votos']">Votação</a>
         </li>
       </ul>

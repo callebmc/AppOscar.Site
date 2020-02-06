@@ -77,14 +77,15 @@ export function tokenGetter() {
             clientID: '9fd84bfd-0275-499b-a63e-a771f4727173',
             authority: 'https://callebauth.b2clogin.com/tfp/callebauth.onmicrosoft.com/B2C_1_signupsigninoscar',
             validateAuthority: false,
-            postLogoutRedirectUri: 'https://oscardosamigos.azurewebsites.net/',
+            // postLogoutRedirectUri: 'https://oscardosamigos.azurewebsites.net/',
+            postLogoutRedirectUri: 'http://localhost:4200/',
             cacheLocation : 'localStorage'
         }),
         CountdownModule,
         JwtModule.forRoot({
             config: {
                tokenGetter,
-               whitelistedDomains: ['localhost:5000'],
+               whitelistedDomains: ['localhost:5000, oscardosamigosapi.azurewebsites.net/api'],
                blacklistedRoutes: ['localhost:5000/api/auth']
             }
          }),

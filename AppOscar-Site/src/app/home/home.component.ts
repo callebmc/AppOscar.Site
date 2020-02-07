@@ -12,17 +12,18 @@ export class HomeComponent implements OnInit {
   registerMode = true;
   values: any;
 
-  horarioCountdown: number;
+  horarioCountdown = 0;
 
   constructor(  private http: HttpClient,
                 private auxService: AuxService) { }
 
   ngOnInit() {
-      this.auxService.getTimeLeft().subscribe(
-          left => {
-              this.horarioCountdown = left;
-          }
-      );
+    //   this.auxService.getTimeLeft().subscribe(
+    //       left => {
+    //           this.horarioCountdown = left;
+    //       }
+    //   );
+    //   console.log(this.horarioCountdown);
   }
 
 

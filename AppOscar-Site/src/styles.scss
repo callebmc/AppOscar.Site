@@ -116,14 +116,20 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
 }
 
 .font-oscar-red{
-    color: #ea2c0b;
+    background-color: #ea2c0b;
+
 }
 
 .font-oscar-brown{
-    color: #3c3030;
+    background-color: #3c3030;
 }
 
 // .img-thumbnail{
 //     height: 154.47px;
 //     width: 107.5px;
 // }
+@font-face {
+    font-family: beba;
+    src: url(assets/fonts/Bebas-Regular.otf) format("opentype");
+}
+

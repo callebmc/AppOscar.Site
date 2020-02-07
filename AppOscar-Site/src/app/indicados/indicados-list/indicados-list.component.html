@@ -1,22 +1,26 @@
-<div class="bg-light">
+<div class="font-oscar-brown">
     <div class="container">
         <h1 class="display-4 font-oscar-gold">Indicados Oscar 2020</h1>
-        <p class="lead font-oscar-black">Todos os indicados ao Oscar</p>
+        <p class="lead font-oscar-gold">Todos os indicados ao Oscar</p>
     </div>
 </div>
 
-<div class="container mt-3  ">
-    <div class="row justify-content-center">
-        <mat-card class="col-lg-10 col-md-10 col-sm-6 mt-4 ml-2 mr-2" *ngFor="let categoria of categorias">
-            <h4 class="text-center">{{categoria.nomeCategoria}}</h4>
-            <mat-expansion-panel>
-                <mat-expansion-panel-header>
-                    <mat-panel-title>
-                        Indicados
-                    </mat-panel-title>
-                </mat-expansion-panel-header>
-                <app-indicados-card [categoria]="categoria"></app-indicados-card>
-            </mat-expansion-panel>
-        </mat-card>
+<div class="row">
+    <div class="col mt-2">
+        <div class="container mt-3  ">
+            <div class="row justify-content-center">
+                <mat-card class="col-lg-10 col-md-10 col-sm-6 mt-4 ml-2 mr-2" *ngFor="let categoria of categorias">
+                    <h4 class="text-center">{{categoria.nomeCategoria}}</h4>
+                    <mat-expansion-panel>
+                        <mat-expansion-panel-header>
+                            <mat-panel-title>
+                                <h4 class="font-oscar-gold">Indicados</h4>
+                            </mat-panel-title>
+                        </mat-expansion-panel-header>
+                        <app-indicados-card [categoria]="categoria"></app-indicados-card>
+                    </mat-expansion-panel>
+                </mat-card>
+            </div>
+        </div>
     </div>
 </div>

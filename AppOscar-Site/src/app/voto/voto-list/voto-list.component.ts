@@ -78,7 +78,7 @@ export class VotoListComponent implements OnInit {
         this.modalRef.hide();
         this.checaUsuario();
         this.openSnackBar('Voto Cadastrado com sucesso!', 'Boa Sorte!');
-        // location.reload();
+        setTimeout(() => {this.checaUsuario()}, 3000)
       }
 
       openSnackBar(message: string, action: string) {

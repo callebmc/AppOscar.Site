@@ -61,7 +61,6 @@ export class VotoListComponent implements OnInit {
     initCategorias() {
         this.categoriaService.getCategorias().subscribe(
             categorias => {
-                console.log(categorias);
                 this.categorias = categorias;
             },
             error => {

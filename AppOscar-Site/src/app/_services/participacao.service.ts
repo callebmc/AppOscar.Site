@@ -46,4 +46,17 @@ export class ParticipacaoService {
     cadastraParticipacao(participacao: Participacao) {
         return this.http.post(this.baseUrl + 'participacao', participacao);
     }
+
+    getParticipacaoPorId(id: number) {
+        const url = `participacao/by-id/${id}`;
+        return this.http.get<Participacao>(this.baseUrl + url).pipe(
+            concatMap(participacao => {
+                const deserialized = this.deserialize.deserialize(
+                    participacao
+                ) as Participacao;
+                console.log(deserialized);
+                return of(deserialized);
+            })
+        );
+    }
 }

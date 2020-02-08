@@ -1,0 +1,21 @@
+<div class="row">
+    <div class="col mt-2">
+        <div class="container mt-3  ">
+            <div class="row justify-content-center">
+                <mat-card class="col-lg-10 col-md-10 col-sm-6 mt-4 ml-2 mr-2">
+                    <h4 class="text-center">Meus votos</h4>
+                    <mat-expansion-panel>
+                        <mat-expansion-panel-header>
+                            <mat-panel-title>
+                                <h4 class="font-oscar-gold">Meus votos</h4>
+                            </mat-panel-title>
+                        </mat-expansion-panel-header>
+                        <div *ngFor="let voto of votos">
+                            <app-votos-escolhidos-card [id]="voto.idParticipacao"></app-votos-escolhidos-card>
+                        </div>
+                    </mat-expansion-panel>
+                </mat-card>
+            </div>
+        </div>
+    </div>
+</div>
